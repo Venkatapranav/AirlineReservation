@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+      <h:form>
+            <h:panelGrid columns="3">
+               
+                <h:outputLabel value="Name: "/>
+                <h:inputText id="n" value="#{customer.name}"
+                                 required="true" requiredMessage="please enter Name"/>
+                    <h:message for="n" style="color: red"/>
+                <h:outputLabel  value="SSN: "/>
+                <h:inputText id="sn" value="#{customer.ssn}"
+                                 required="true" requiredMessage="please enter Social Security Number" />
+                                             
+                    <h:message for="ln" style="color: red"/>
+                
+                   
+                    
+                    <h:outputLabel  value="Address: "/>
+                    <h:inputText id="addr" value="#{customer.address}" 
+                            required="true" requiredMessage="please enter address" 
+                            validatorMessage="min 4 char..max 15 char" >
+                           <f:validateLength for="un" minimum="4" maximum="15" />
+                          </h:inputText>
+                    
+                    <h:message for="addr" style="color: red"/>
+                    
+                    <h:outputLabel  value="Phone: "/>
+                    <h:inputText id="phn" value="#{customer.customerPh}" 
+                            required="true" requiredMessage="please enter phone number" 
+                            validatorMessage="min 10 char..max 12 char" >
+                           <f:validateLength for="phn" minimum="4" maximum="15" />
+                          </h:inputText>
+                    
+                    <h:message for="phn" style="color: red"/>
+                    
+                    <h:outputLabel  value="Email: "/>
+                    <h:inputText id="em" value="#{customer.email}" 
+                            required="true" requiredMessage="please enter email id" 
+                            />
+                       
+                    
+                    <h:message for="em" style="color: red"/>
+                    
+                <h:outputLabel  value=" Password: "/>
+                    <h:inputSecret id="ps" value="#{customer.password}"
+                             required="true" requiredMessage="please enter password"
+                             validatorMessage="min 4 char..max 15 char" >
+                         <f:validateLength for="un" minimum="4" maximum="15" />
+                    </h:inputSecret>
+                    <h:message for="ps" style="color: red"/>
+                <h:commandButton value="Register" action="#{customer.addCustomer()}" />
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
