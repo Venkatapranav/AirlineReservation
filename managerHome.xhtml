@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html 
+   
+    xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <h:outputScript library="primefaces" name="jquery/jquery.js" />
+            <h:outputScript name="jquery/jquery-plugins.js" library="primefaces"/>
+
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>PrimeFaces</title>
+            </f:facet>
+            
+        </h:head>
+
+        <h:body>
+          
+            <p:layout fullPage="true">
+                <ui:insert name="header"/>
+
+                <p:layoutUnit position="north" size="250" resizable="true" closable="true" collapsible="true">
+                    Header
+                    <br/>
+                    <p:layout >
+                        <p:layoutUnit position="center">
+                    
+                            <h1 align="justify" style="color: crimson; font-family: sans-serif">
+                                Flying APP
+                            </h1>
+                    
+                        </p:layoutUnit>
+                        <p:layoutUnit style="border: none" position="south" size="80" closable="true" collapsible="false" >
+                            <p:panelGrid columns="6" style="border-style: none; margin-left: 10%" >
+                                
+                                <p:outputLabel value="Search Flight:" />
+                                <p:selectOneMenu style="width: 200px">
+                                    <f:selectItem itemLabel="Source" itemValue="" />
+                                    <f:selectItem itemLabel="HYD" itemValue="HYD" />
+                                    <f:selectItem itemLabel="DEL" itemValue="DEL" />
+                                    <f:selectItem itemLabel="MUM" itemValue="MUM" />
+                                </p:selectOneMenu>
+                                <p:selectOneMenu style="width: 200px">
+                                    <f:selectItem itemLabel="Destination" itemValue="" />
+                                    <f:selectItem itemLabel="HYD" itemValue="HYD" />
+                                    <f:selectItem itemLabel="DEL" itemValue="DEL" />
+                                    <f:selectItem itemLabel="MUM" itemValue="MUM" />
+                                </p:selectOneMenu>
+                                <p:calendar label="Journey Date" placeholder="journey date"/>
+                                <p:button value="GO" />
+                                <p:panelGrid columns="2" style="border:none; border-style:hidden">
+                                    <p:commandButton value="SignIn" actionListener="#{login.signIn}"/>
+                                    <p:commandButton value="SignUp" actionListener="#{login.signIn()}" />
+                                    
+                                </p:panelGrid> 
+                            </p:panelGrid>
+                        </p:layoutUnit>
+                    </p:layout>
+                    
+                   
+                </p:layoutUnit>
+                
+                
+
+                <p:layoutUnit position="south" size="60" closable="false" collapsible="false" >
+                                       
+                    <h5 align="center" style="color:crimson" >
+                        Copyright @ 2018 | Oracle India Pvt Ltd.
+                    </h5>
+                    
+                </p:layoutUnit>
+
+                <p:layoutUnit position="west" size="175"  collapsible="true" closable="true">
+                    <ui:insert name="menu"/>
+                    <p:menu style="background-color: white">                      
+                            <p:menuitem value="Home" url="Demo.xhtml" />
+                            <p:menuitem value="Book Ticket" url="http://www.primefaces.org/documentation.html" />
+                            <p:menuitem value="Cancel Ticket" url="cancelTicket.xhtml" />
+                            <p:menuitem value="Reschedule" url="rescheduleTicket.xhtml" />
+                            <p:menuitem value="Booking History" url="http://www.primefaces.org/themes.html" />
+                    </p:menu>
+                </p:layoutUnit>    
+                
+                <p:layoutUnit position="east" size="250" collapsible="true" closable="true">
+                    <ui:insert name="menu" />
+                    <p:menu style="background-color: white">                      
+                            <p:menuitem value="Add/Remove Flight" url="Demo.xhtml" />
+                            <p:menuitem value="Daily Report" url="http://www.primefaces.org/documentation.html" />
+                            <p:menuitem value="Revenue Report" url="cancelTicket.xhtml" />
+                            <p:menuitem value="Add/Remove Employee" url="rescheduleTicket.xhtml" />                         
+                    </p:menu>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+                    <ui:insert name="content"/>                    
+                    
+                </p:layoutUnit>
+
+            </p:layout>
+
+        </h:body>
+
+    </f:view>
+</html>
+
