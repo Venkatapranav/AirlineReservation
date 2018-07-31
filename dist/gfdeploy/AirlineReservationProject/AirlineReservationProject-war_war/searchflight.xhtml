@@ -15,17 +15,17 @@
     <h:panelGrid columns="2" cellpadding="5">
         
         <p:outputLabel value="Source " for="sf" />
-        <p:autoComplete id="sf" dropdown="true" value="#{autoCompleteView.txt1}" completeMethod="#{autoCompleteView.completeText}" />
+        <p:autoComplete id="sf" dropdown="true" value="#{route.startingFrom}"  />
  
         <p:outputLabel value=" Destination " for="df" />
-        <p:autoComplete id="df" dropdown="true" value="#{autoCompleteView.txt1}" completeMethod="#{autoCompleteView.completeText}" />
+        <p:autoComplete id="df" dropdown="true" value="#{route.destinaion}"  />
  
         
         
          <p:outputLabel for="button" value="Date of Journey" />
-        <p:calendar id="button" value="#{calendarView.date1}" showOn="button" />
+         <p:calendar id="button" value="#{route.date}" showOn="button" />
         
-        <h:commandButton value="Get Info" />
+         <h:commandButton value="Get Info" action="#{route.getRouteID}" />
         </h:panelGrid>
    
 </h:form>

@@ -5,7 +5,8 @@
  */
 package com.airline.model;
 
-import java.util.Date;
+
+import java.sql.Date;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
 import javax.faces.bean.ManagedBean;
